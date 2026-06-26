@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <defs>
+    <linearGradient id="bg06" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDF0EB"/>
+      <stop offset="100%" stop-color="#F9E2DA"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="300" fill="url(#bg06)"/>
+
+  <!-- Subtle divider lines -->
+  <line x1="40" y1="90" x2="760" y2="90" stroke="#EDD5C8" stroke-width="1"/>
+  <line x1="40" y1="210" x2="760" y2="210" stroke="#EDD5C8" stroke-width="1"/>
+
+  <!-- Header -->
+  <text x="400" y="58" font-family="Inter,sans-serif" font-size="10" fill="#C4897A" font-weight="600" letter-spacing="3" text-anchor="middle">TRUSTED PARTNERS &amp; REGULATORY COMPLIANCE</text>
+
+  <!-- Partner 1: Perth Mint (custody) -->
+  <g transform="translate(60, 110)">
+    <rect x="0" y="0" width="160" height="80" rx="12" fill="white" stroke="#EDD5C8" stroke-width="1.5"/>
+    <!-- Coin mark -->
+    <circle cx="30" cy="40" r="22" fill="#C4A35A" opacity=".15"/>
+    <circle cx="30" cy="40" r="16" fill="none" stroke="#C4A35A" stroke-width="2"/>
+    <text x="30" y="45" font-family="Georgia,serif" font-size="12" fill="#C4A35A" text-anchor="middle" font-weight="600">PM</text>
+    <!-- Name -->
+    <text x="58" y="32" font-family="Georgia,serif" font-size="13" fill="#3D2010" font-weight="600">Perth Mint</text>
+    <text x="58" y="48" font-family="Inter,sans-serif" font-size="8" fill="#C4897A">Australian Government</text>
+    <text x="58" y="61" font-family="Inter,sans-serif" font-size="8" fill="#C4897A">Precious Metal Custody</text>
+    <!-- Badge -->
+    <rect x="8" y="68" width="60" height="8" rx="4" fill="#C4A35A" opacity=".15"/>
+    <text x="38" y="75" font-family="Inter,sans-serif" font-size="6" fill="#C4A35A" text-anchor="middle" font-weight="600" letter-spacing="0.5">Est. 1899</text>
+  </g>
+
+  <!-- Partner 2: Visa -->
+  <g transform="translate(240, 110)">
+    <rect x="0" y="0" width="160" height="80" rx="12" fill="white" stroke="#EDD5C8" stroke-width="1.5"/>
+    <!-- Visa wordmark simplified -->
+    <text x="80" y="38" font-family="Georgia,serif" font-size="26" fill="#1A1F71" text-anchor="middle" font-weight="700" font-style="italic">VISA</text>
+    <text x="80" y="56" font-family="Inter,sans-serif" font-size="8" fill="#C4897A" text-anchor="middle">Debit Card Network</text>
+    <rect x="20" y="68" width="120" height="6" rx="3" fill="#1A1F71" opacity=".08"/>
+    <text x="80" y="74" font-family="Inter,sans-serif" font-size="5.5" fill="#1A1F71" text-anchor="middle" opacity=".5" letter-spacing="0.5">TRUSTED GLOBALLY</text>
+  </g>
+
+  <!-- Partner 3: APRA regulated -->
+  <g transform="translate(420, 110)">
+    <rect x="0" y="0" width="160" height="80" rx="12" fill="white" stroke="#EDD5C8" stroke-width="1.5"/>
+    <!-- Shield icon -->
+    <path d="M 30 18 L 46 24 L 46 38 Q 46 50 30 56 Q 14 50 14 38 L 14 24 Z" fill="#5C2E38" opacity=".15"/>
+    <path d="M 30 22 L 42 27 L 42 38 Q 42 48 30 53 Q 18 48 18 38 L 18 27 Z" fill="#5C2E38" opacity=".5"/>
+    <path d="M 23 38 L 29 44 L 38 32" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="58" y="32" font-family="Inter,sans-serif" font-size="12" fill="#5C2E38" font-weight="700">APRA</text>
+    <text x="58" y="47" font-family="Inter,sans-serif" font-size="8" fill="#C4897A">Australian Prudential</text>
+    <text x="58" y="59" font-family="Inter,sans-serif" font-size="8" fill="#C4897A">Regulation Authority</text>
+    <rect x="8" y="68" width="80" height="8" rx="4" fill="#5C2E38" opacity=".08"/>
+    <text x="48" y="75" font-family="Inter,sans-serif" font-size="6" fill="#5C2E38" text-anchor="middle" font-weight="600" opacity=".5" letter-spacing="0.5">CDR COMPLIANT</text>
+  </g>
+
+  <!-- Partner 4: ASIC -->
+  <g transform="translate(600, 110)">
+    <rect x="0" y="0" width="160" height="80" rx="12" fill="white" stroke="#EDD5C8" stroke-width="1.5"/>
+    <text x="80" y="36" font-family="Inter,sans-serif" font-size="16" fill="#003366" font-weight="800" text-anchor="middle" letter-spacing="2">ASIC</text>
+    <text x="80" y="50" font-family="Inter,sans-serif" font-size="7" fill="#C4897A" text-anchor="middle">Australian Securities &amp;</text>
+    <text x="80" y="61" font-family="Inter,sans-serif" font-size="7" fill="#C4897A" text-anchor="middle">Investments Commission</text>
+    <rect x="20" y="68" width="120" height="6" rx="3" fill="#003366" opacity=".07"/>
+    <text x="80" y="74" font-family="Inter,sans-serif" font-size="5.5" fill="#003366" text-anchor="middle" opacity=".4" letter-spacing="0.5">AFSL LICENSED</text>
+  </g>
+
+  <!-- Bottom compliance text -->
+  <text x="400" y="240" font-family="Inter,sans-serif" font-size="9" fill="#C4897A" text-anchor="middle">Vault Financial Pty Ltd · ABN pending · AFSL pending · Built on Australian soil</text>
+  <text x="400" y="258" font-family="Inter,sans-serif" font-size="9" fill="#DBA8A0" text-anchor="middle">All precious metal purchases are physically backed and held in Australian custody.</text>
+  <text x="400" y="276" font-family="Inter,sans-serif" font-size="9" fill="#DBA8A0" text-anchor="middle">Savings products issued by licensed ADI partner. Consumer Data Right compliant.</text>
+</svg>

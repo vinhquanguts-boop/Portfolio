@@ -1,0 +1,479 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bgWall" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A1018"/><stop offset="40%" stop-color="#3D1C24"/><stop offset="100%" stop-color="#5C2E38"/>
+    </linearGradient>
+    <radialGradient id="tableTop" cx="48%" cy="42%" r="58%">
+      <stop offset="0%" stop-color="#D0B47A"/><stop offset="45%" stop-color="#B49458"/><stop offset="100%" stop-color="#7A6030"/>
+    </radialGradient>
+    <linearGradient id="tableEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C8AA70"/><stop offset="100%" stop-color="#5A3A18"/>
+    </linearGradient>
+    <radialGradient id="candleHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFE090" stop-opacity=".5"/>
+      <stop offset="35%" stop-color="#FFA040" stop-opacity=".2"/>
+      <stop offset="100%" stop-color="#FF6020" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="candleHalo2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD878" stop-opacity=".3"/>
+      <stop offset="100%" stop-color="#FF8020" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="redWine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B1A2A" stop-opacity=".88"/>
+      <stop offset="100%" stop-color="#5C0A18" stop-opacity=".92"/>
+    </linearGradient>
+    <linearGradient id="whiteWine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8D870" stop-opacity=".7"/>
+      <stop offset="100%" stop-color="#C4B040" stop-opacity=".75"/>
+    </linearGradient>
+    <radialGradient id="plateGrad" cx="38%" cy="34%" r="62%">
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="65%" stop-color="#F8F2EC"/><stop offset="100%" stop-color="#EDE4D8"/>
+    </radialGradient>
+    <linearGradient id="chipGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0E090"/><stop offset="50%" stop-color="#D4B040"/><stop offset="100%" stop-color="#A88530"/>
+    </linearGradient>
+    <!-- Skins -->
+    <linearGradient id="sk1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F4D8B8"/><stop offset="100%" stop-color="#DEB080"/></linearGradient>
+    <linearGradient id="sk2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D89060"/><stop offset="100%" stop-color="#B06838"/></linearGradient>
+    <linearGradient id="sk3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ECC498"/><stop offset="100%" stop-color="#CA8E58"/></linearGradient>
+    <linearGradient id="sk4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#C87848"/><stop offset="100%" stop-color="#8A5030"/></linearGradient>
+    <!-- Napkins -->
+    <linearGradient id="nap1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#EDAAB8"/><stop offset="100%" stop-color="#DBA8A0"/></linearGradient>
+    <linearGradient id="nap2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F9E2DA"/><stop offset="100%" stop-color="#EDD5C8"/></linearGradient>
+    <linearGradient id="nap3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5C2E38"/><stop offset="100%" stop-color="#7D3D4A"/></linearGradient>
+    <linearGradient id="nap4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#C4A35A"/><stop offset="100%" stop-color="#A88530"/></linearGradient>
+    <!-- Phone screen -->
+    <linearGradient id="phScreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5C2E38"/><stop offset="42%" stop-color="#7D3D4A"/><stop offset="100%" stop-color="#FDF0EB"/>
+    </linearGradient>
+    <!-- Filters -->
+    <filter id="fDrop"><feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#2A1018" flood-opacity=".35"/></filter>
+    <filter id="fSoft"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#2A1018" flood-opacity=".25"/></filter>
+    <filter id="fPhone"><feDropShadow dx="3" dy="10" stdDeviation="16" flood-color="#1A0A10" flood-opacity=".65"/></filter>
+    <!-- Clip paths -->
+    <clipPath id="tblClip"><ellipse cx="500" cy="358" rx="355" ry="248"/></clipPath>
+    <clipPath id="phClip"><rect x="0" y="0" width="132" height="244" rx="18" ry="18"/></clipPath>
+  </defs>
+
+  <!-- ── BACKGROUND ── -->
+  <rect width="1200" height="675" fill="url(#bgWall)"/>
+  <!-- Subtle panel lines -->
+  <g opacity=".06" stroke="rgba(196,137,122,.6)" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="675"/><line x1="200" y1="0" x2="200" y2="675"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="400" y1="0" x2="400" y2="675"/>
+    <line x1="500" y1="0" x2="500" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/>
+    <line x1="700" y1="0" x2="700" y2="675"/><line x1="800" y1="0" x2="800" y2="675"/>
+    <line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+  <rect x="0" y="245" width="920" height="2" fill="rgba(196,137,122,.07)"/>
+  <!-- Ambient candle glow on ceiling/wall -->
+  <ellipse cx="500" cy="200" rx="420" ry="260" fill="url(#candleHalo2)" opacity=".9"/>
+
+  <!-- Wall artwork -->
+  <g transform="translate(55,38)">
+    <rect x="0" y="0" width="96" height="126" rx="3" fill="none" stroke="rgba(196,163,90,.22)" stroke-width="2"/>
+    <rect x="7" y="7" width="82" height="112" rx="2" fill="#2A1018"/>
+    <circle cx="48" cy="48" r="24" fill="none" stroke="rgba(196,163,90,.25)" stroke-width="1.5"/>
+    <circle cx="48" cy="48" r="14" fill="rgba(92,46,56,.45)"/>
+    <line x1="20" y1="78" x2="76" y2="78" stroke="rgba(196,163,90,.15)" stroke-width="1"/>
+    <text x="48" y="98" font-family="Georgia,serif" font-size="7" fill="rgba(196,163,90,.28)" text-anchor="middle" letter-spacing="1.5">VAULT</text>
+  </g>
+  <!-- Wall sconce -->
+  <g transform="translate(820,55)">
+    <ellipse cx="30" cy="28" rx="55" ry="42" fill="#FFE090" opacity=".07"/>
+    <path d="M 20 28 Q 30 16 40 28 Q 35 52 30 62 Q 25 52 20 28 Z" fill="#FFD060" opacity=".35"/>
+    <rect x="23" y="26" width="14" height="9" rx="2" fill="#5C3018" opacity=".8"/>
+  </g>
+
+  <!-- ── TABLE EDGE ── -->
+  <ellipse cx="500" cy="372" rx="357" ry="252" fill="url(#tableEdge)"/>
+  <!-- ── TABLE SURFACE ── -->
+  <ellipse cx="500" cy="358" rx="355" ry="248" fill="url(#tableTop)"/>
+  <!-- Wood grain -->
+  <g clip-path="url(#tblClip)" opacity=".1" stroke="#8B6030" stroke-width="1.2">
+    <line x1="145" y1="210" x2="855" y2="210"/>
+    <line x1="148" y1="240" x2="852" y2="240"/>
+    <line x1="150" y1="270" x2="850" y2="270"/>
+    <line x1="150" y1="300" x2="850" y2="300"/>
+    <line x1="150" y1="330" x2="850" y2="330"/>
+    <line x1="150" y1="360" x2="850" y2="360"/>
+    <line x1="150" y1="390" x2="850" y2="390"/>
+    <line x1="150" y1="420" x2="850" y2="420"/>
+    <line x1="148" y1="450" x2="852" y2="450"/>
+    <line x1="146" y1="480" x2="854" y2="480"/>
+    <line x1="145" y1="510" x2="855" y2="510"/>
+  </g>
+  <!-- Table cloth center runner -->
+  <ellipse cx="500" cy="358" rx="195" ry="128" fill="#F9E2DA" opacity=".13"/>
+  <!-- Table rim highlight -->
+  <ellipse cx="500" cy="357" rx="355" ry="248" fill="none" stroke="rgba(255,224,160,.16)" stroke-width="2"/>
+
+  <!-- ── CANDLE CENTREPIECE ── -->
+  <g transform="translate(468,296)">
+    <!-- Halo -->
+    <ellipse cx="32" cy="22" rx="78" ry="58" fill="url(#candleHalo)" opacity="1"/>
+    <ellipse cx="32" cy="22" rx="44" ry="34" fill="url(#candleHalo)" opacity=".8"/>
+    <!-- Holder plate -->
+    <ellipse cx="32" cy="70" rx="26" ry="8" fill="#C4A35A" opacity=".65"/>
+    <ellipse cx="32" cy="66" rx="26" ry="8" fill="url(#nap4)" opacity=".85"/>
+    <!-- Candle body -->
+    <rect x="20" y="20" width="24" height="48" rx="4" fill="#FAF0E0"/>
+    <path d="M 22 24 Q 19 34 21 42" stroke="#F5E8C8" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 42 27 Q 45 36 43 44" stroke="#F5E8C8" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <rect x="20" y="20" width="24" height="48" rx="4" fill="none" stroke="rgba(180,140,70,.18)" stroke-width="1"/>
+    <!-- Flame -->
+    <path d="M 32 20 Q 38 6 32 -4 Q 26 6 32 20 Z" fill="#FFD060"/>
+    <path d="M 32 17 Q 37 6 32 0 Q 27 6 32 17 Z" fill="#FF9020"/>
+    <path d="M 32 14 Q 36 7 32 3 Q 28 7 32 14 Z" fill="white"/>
+    <ellipse cx="32" cy="12" rx="3" ry="4.5" fill="#FFE898" opacity=".85"/>
+  </g>
+  <!-- Tiny flowers -->
+  <g transform="translate(447,318)">
+    <circle cx="10" cy="10" r="5.5" fill="#EDAAB8" opacity=".75"/>
+    <circle cx="10" cy="10" r="2.5" fill="#F2C4CE"/>
+    <line x1="10" y1="15" x2="12" y2="27" stroke="#6A8A4A" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(540,312)">
+    <circle cx="10" cy="10" r="5" fill="#DBA8A0" opacity=".7"/>
+    <circle cx="10" cy="10" r="2.5" fill="#EDAAB8"/>
+    <line x1="10" y1="15" x2="8" y2="26" stroke="#6A8A4A" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(454,338)">
+    <circle cx="9" cy="9" r="4" fill="#F2C4CE" opacity=".65"/>
+    <line x1="9" y1="13" x2="8" y2="22" stroke="#6A8A4A" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- ── PLACE SETTING — TOP (12 o'clock) ── -->
+  <g transform="translate(428,162)" filter="url(#fSoft)">
+    <path d="M -22 0 L 42 0 L 10 -32 Z" fill="url(#nap1)" opacity=".82"/>
+    <ellipse cx="10" cy="10" rx="50" ry="33" fill="#EEE4D8" opacity=".9"/>
+    <ellipse cx="10" cy="8" rx="46" ry="30" fill="url(#plateGrad)"/>
+    <ellipse cx="10" cy="8" rx="46" ry="30" fill="none" stroke="rgba(180,150,110,.22)" stroke-width="2"/>
+    <ellipse cx="10" cy="8" rx="36" ry="22" fill="none" stroke="rgba(180,150,110,.13)" stroke-width="1"/>
+    <!-- Pasta food -->
+    <ellipse cx="10" cy="8" rx="26" ry="16" fill="#C4894A" opacity=".5"/>
+    <path d="M -4 6 Q 4 1 10 6 Q 16 11 22 7" stroke="#A0682A" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M -6 10 Q 2 5 8 10 Q 14 15 20 11" stroke="#B07A38" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <ellipse cx="8" cy="5" rx="7" ry="4.5" fill="#8B3020" opacity=".45"/>
+    <ellipse cx="16" cy="12" rx="4" ry="3" fill="#6A8A4A" opacity=".65"/>
+  </g>
+  <!-- Wine glass top -->
+  <g transform="translate(504,160)">
+    <ellipse cx="18" cy="25" rx="14" ry="9.5" fill="url(#redWine)"/>
+    <path d="M 4 12 Q 2 30 6 40 Q 10 48 18 50 Q 26 48 30 40 Q 34 30 32 12 Z" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.33)" stroke-width="1.5"/>
+    <ellipse cx="18" cy="25" rx="14" ry="9.5" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+    <rect x="16" y="50" width="4" height="24" rx="2" fill="rgba(255,255,255,.4)"/>
+    <ellipse cx="18" cy="74" rx="14" ry="5" fill="rgba(255,255,255,.28)"/>
+    <path d="M 7 16 Q 6 26 8 34" stroke="rgba(255,255,255,.28)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Fork top -->
+  <g transform="translate(396,175)">
+    <rect x="0" y="0" width="3.5" height="46" rx="1.8" fill="rgba(200,180,140,.78)"/>
+    <line x1="0.5" y1="6" x2="0.5" y2="22" stroke="rgba(200,180,140,.85)" stroke-width="1"/>
+    <line x1="3" y1="6" x2="3" y2="22" stroke="rgba(200,180,140,.85)" stroke-width="1"/>
+  </g>
+  <g transform="translate(412,175)">
+    <rect x="0" y="0" width="3.5" height="46" rx="1.8" fill="rgba(200,180,140,.78)"/>
+    <path d="M 3.5 0 Q 7 5 3.5 22 L 0 22 Z" fill="rgba(200,180,140,.55)"/>
+  </g>
+
+  <!-- ── PLACE SETTING — RIGHT (3 o'clock) ── -->
+  <g transform="translate(715,298)" filter="url(#fSoft)">
+    <path d="M 0 -26 L 50 0 L 0 26 Z" fill="url(#nap3)" opacity=".68"/>
+    <ellipse cx="10" cy="0" rx="50" ry="34" fill="#EEE4D8" opacity=".9"/>
+    <ellipse cx="10" cy="-2" rx="46" ry="30" fill="url(#plateGrad)"/>
+    <ellipse cx="10" cy="-2" rx="46" ry="30" fill="none" stroke="rgba(180,150,110,.22)" stroke-width="2"/>
+    <ellipse cx="10" cy="-2" rx="36" ry="22" fill="none" stroke="rgba(180,150,110,.13)" stroke-width="1"/>
+    <!-- Steak -->
+    <ellipse cx="8" cy="-2" rx="23" ry="13" fill="#8B4020" opacity=".62"/>
+    <ellipse cx="5" cy="-4" rx="14" ry="8" fill="#6B2810" opacity=".5"/>
+    <path d="M -4 -5 Q 2 -10 8 -4" stroke="#C4600A" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="20" cy="9" rx="6" ry="4" fill="#6A8A4A" opacity=".72"/>
+    <ellipse cx="24" cy="4" rx="4.5" ry="3" fill="#8AAA5A" opacity=".62"/>
+  </g>
+  <!-- White wine right -->
+  <g transform="translate(770,268)">
+    <ellipse cx="18" cy="22" rx="14" ry="9" fill="url(#whiteWine)"/>
+    <path d="M 4 11 Q 2 28 6 38 Q 10 46 18 48 Q 26 46 30 38 Q 34 28 32 11 Z" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.33)" stroke-width="1.5"/>
+    <ellipse cx="18" cy="22" rx="14" ry="9" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="1"/>
+    <rect x="16" y="48" width="4" height="22" rx="2" fill="rgba(255,255,255,.4)"/>
+    <ellipse cx="18" cy="70" rx="14" ry="5" fill="rgba(255,255,255,.28)"/>
+    <path d="M 7 15 Q 6 24 8 32" stroke="rgba(255,255,255,.28)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- ── PLACE SETTING — BOTTOM (6 o'clock) ── -->
+  <g transform="translate(434,488)" filter="url(#fSoft)">
+    <path d="M -20 0 L 46 0 L 12 34 Z" fill="url(#nap2)" opacity=".82"/>
+    <ellipse cx="12" cy="-5" rx="50" ry="33" fill="#EEE4D8" opacity=".9"/>
+    <ellipse cx="12" cy="-7" rx="46" ry="30" fill="url(#plateGrad)"/>
+    <ellipse cx="12" cy="-7" rx="46" ry="30" fill="none" stroke="rgba(180,150,110,.22)" stroke-width="2"/>
+    <ellipse cx="12" cy="-7" rx="36" ry="22" fill="none" stroke="rgba(180,150,110,.13)" stroke-width="1"/>
+    <!-- Fish -->
+    <ellipse cx="10" cy="-8" rx="22" ry="12" fill="#E8D4A0" opacity=".72"/>
+    <ellipse cx="10" cy="-8" rx="13" ry="7" fill="#D4B870" opacity=".62"/>
+    <path d="M -2 -8 Q 4 -15 12 -8 Q 18 -1 10 -4" fill="rgba(200,160,60,.38)"/>
+    <ellipse cx="22" cy="-15" rx="5" ry="3" fill="#6A8A4A" opacity=".8"/>
+    <ellipse cx="18" cy="-19" rx="3.5" ry="2.5" fill="#8AAA5A" opacity=".7"/>
+  </g>
+  <!-- Red wine bottom -->
+  <g transform="translate(490,490)">
+    <ellipse cx="18" cy="23" rx="14" ry="9.5" fill="url(#redWine)"/>
+    <path d="M 4 11 Q 2 29 6 39 Q 10 48 18 50 Q 26 48 30 39 Q 34 29 32 11 Z" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.33)" stroke-width="1.5"/>
+    <rect x="16" y="50" width="4" height="22" rx="2" fill="rgba(255,255,255,.4)"/>
+    <ellipse cx="18" cy="72" rx="14" ry="5" fill="rgba(255,255,255,.28)"/>
+    <path d="M 7 15 Q 6 26 8 35" stroke="rgba(255,255,255,.28)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- ── PLACE SETTING — LEFT (9 o'clock) ── -->
+  <g transform="translate(234,298)" filter="url(#fSoft)">
+    <path d="M 46 -26 L -4 0 L 46 26 Z" fill="url(#nap4)" opacity=".62"/>
+    <ellipse cx="2" cy="0" rx="50" ry="34" fill="#EEE4D8" opacity=".9"/>
+    <ellipse cx="2" cy="-2" rx="46" ry="30" fill="url(#plateGrad)"/>
+    <ellipse cx="2" cy="-2" rx="46" ry="30" fill="none" stroke="rgba(180,150,110,.22)" stroke-width="2"/>
+    <ellipse cx="2" cy="-2" rx="36" ry="22" fill="none" stroke="rgba(180,150,110,.13)" stroke-width="1"/>
+    <!-- Risotto -->
+    <ellipse cx="2" cy="-2" rx="23" ry="14" fill="#D4B870" opacity=".56"/>
+    <ellipse cx="0" cy="-4" rx="13" ry="8" fill="#C4A050" opacity=".5"/>
+    <path d="M -8 0 Q -2 -5 4 0 Q 10 5 16 0" stroke="#A07830" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".6"/>
+    <ellipse cx="14" cy="-11" rx="5" ry="3" fill="#6A8A4A" opacity=".78"/>
+  </g>
+  <!-- Water glass left -->
+  <g transform="translate(182,268)">
+    <ellipse cx="18" cy="21" rx="14" ry="9" fill="rgba(200,230,255,.32)"/>
+    <path d="M 4 11 Q 2 27 6 37 Q 10 45 18 47 Q 26 45 30 37 Q 34 27 32 11 Z" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+    <rect x="16" y="47" width="4" height="22" rx="2" fill="rgba(255,255,255,.4)"/>
+    <ellipse cx="18" cy="69" rx="14" ry="5" fill="rgba(255,255,255,.28)"/>
+    <circle cx="10" cy="29" r="1.5" fill="rgba(255,255,255,.3)"/>
+    <circle cx="26" cy="22" r="1" fill="rgba(255,255,255,.22)"/>
+    <path d="M 7 15 Q 6 23 8 31" stroke="rgba(255,255,255,.28)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- ── BREAD BASKET ── -->
+  <g transform="translate(554,310)" filter="url(#fSoft)">
+    <ellipse cx="30" cy="24" rx="33" ry="18" fill="#7A5820" opacity=".85"/>
+    <ellipse cx="30" cy="18" rx="33" ry="18" fill="#A07840"/>
+    <ellipse cx="30" cy="18" rx="33" ry="18" fill="none" stroke="rgba(0,0,0,.12)" stroke-width="1" stroke-dasharray="4 3"/>
+    <ellipse cx="30" cy="13" rx="29" ry="14" fill="url(#nap2)" opacity=".68"/>
+    <!-- Bread rolls -->
+    <ellipse cx="22" cy="8" rx="12" ry="7.5" fill="#C8904A"/>
+    <path d="M 13 7 Q 22 4 31 7" stroke="rgba(180,120,40,.38)" stroke-width="1" fill="none"/>
+    <ellipse cx="38" cy="6" rx="11" ry="7" fill="#D49A50"/>
+    <ellipse cx="30" cy="15" rx="9" ry="5.5" fill="#C08040"/>
+    <ellipse cx="20" cy="6" rx="5" ry="3.5" fill="rgba(255,220,140,.18)"/>
+  </g>
+
+  <!-- ── HANDS COMING IN FROM 4 SIDES ── -->
+
+  <!-- HAND TOP — reaching toward phone (blush sleeve) -->
+  <g transform="translate(436,78)" filter="url(#fDrop)">
+    <path d="M 8 0 Q 6 32 18 95 Q 23 116 32 122 Q 41 116 46 95 Q 56 32 54 0 Z" fill="#EDAAB8"/>
+    <path d="M 16 0 Q 14 30 24 93 Q 28 112 32 118 Q 36 112 40 93 Q 48 30 46 0 Z" fill="url(#sk1)"/>
+    <!-- Palm -->
+    <ellipse cx="32" cy="126" rx="22" ry="14" fill="url(#sk1)" transform="rotate(-4,32,126)"/>
+    <!-- Fingers -->
+    <path d="M 12 120 Q 10 98 14 84 Q 18 80 22 82 Q 24 96 22 116 Z" fill="url(#sk1)"/>
+    <path d="M 21 116 Q 19 92 23 77 Q 27 73 31 75 Q 33 91 31 116 Z" fill="url(#sk1)"/>
+    <path d="M 30 116 Q 29 91 33 77 Q 37 73 41 75 Q 43 91 41 116 Z" fill="url(#sk1)"/>
+    <path d="M 40 118 Q 40 96 44 82 Q 48 78 52 80 Q 53 96 50 120 Z" fill="url(#sk1)"/>
+    <path d="M 9 122 Q 2 112 6 100 Q 10 94 16 98 Q 18 108 14 122 Z" fill="url(#sk1)"/>
+    <!-- Nail polish -->
+    <ellipse cx="18" cy="84" rx="3.5" ry="2.2" fill="rgba(237,170,184,.7)" transform="rotate(12,18,84)"/>
+    <ellipse cx="27" cy="76" rx="3.5" ry="2.2" fill="rgba(237,170,184,.7)"/>
+    <ellipse cx="36" cy="76" rx="3.5" ry="2.2" fill="rgba(237,170,184,.7)"/>
+    <ellipse cx="45" cy="82" rx="3.5" ry="2.2" fill="rgba(237,170,184,.7)" transform="rotate(-10,45,82)"/>
+    <!-- Gold ring -->
+    <rect x="27" y="100" width="8" height="4.5" rx="2.2" fill="#C4A35A" opacity=".88"/>
+    <!-- Delicate bracelet hint -->
+    <path d="M 12 102 Q 22 98 36 100 Q 48 102 52 98" stroke="#C4A35A" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".5"/>
+  </g>
+
+  <!-- HAND RIGHT — holding white wine stem (dark plum sleeve) -->
+  <g transform="translate(834,298)" filter="url(#fDrop)">
+    <path d="M 0 0 Q 0 22 -12 72 Q -22 104 -32 114 Q -44 114 -50 103 Q -52 82 -42 52 Q -32 22 -30 0 Z" fill="#7D3D4A"/>
+    <path d="M -9 0 Q -9 20 -20 70 Q -30 100 -38 110 Q -44 109 -47 100 Q -48 80 -40 51 Q -30 21 -28 0 Z" fill="url(#sk2)"/>
+    <!-- Palm -->
+    <ellipse cx="-40" cy="118" rx="20" ry="13" fill="url(#sk2)" transform="rotate(16,-40,118)"/>
+    <!-- Fingers gripping stem -->
+    <path d="M -48 112 Q -57 99 -52 84 Q -48 78 -43 82 Q -41 93 -46 112 Z" fill="url(#sk2)"/>
+    <path d="M -44 110 Q -51 96 -46 81 Q -42 75 -37 79 Q -35 90 -40 110 Z" fill="url(#sk2)"/>
+    <path d="M -38 112 Q -43 98 -40 84 Q -37 78 -32 80 Q -30 92 -34 112 Z" fill="url(#sk2)"/>
+    <path d="M -52 114 Q -61 104 -57 92 Q -53 86 -48 90 Q -48 102 -52 114 Z" fill="url(#sk2)"/>
+    <!-- Ring -->
+    <path d="M -49 96 Q -42 93 -36 96" stroke="#C4A35A" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".82"/>
+  </g>
+
+  <!-- HAND BOTTOM — holding fork (cream/ivory sleeve) -->
+  <g transform="translate(355,592)" filter="url(#fDrop)">
+    <path d="M 0 42 Q 12 20 34 0 Q 50 -6 62 0 Q 74 20 80 42 Z" fill="#F9E2DA"/>
+    <path d="M 8 40 Q 18 18 34 2 Q 48 -4 58 2 Q 70 18 74 40 Z" fill="url(#sk3)"/>
+    <!-- Palm -->
+    <ellipse cx="38" cy="-2" rx="24" ry="14" fill="url(#sk3)" transform="rotate(-8,38,-2)"/>
+    <!-- Fingers -->
+    <path d="M 18 -3 Q 12 -22 16 -36 Q 20 -40 25 -38 Q 27 -24 24 -3 Z" fill="url(#sk3)"/>
+    <path d="M 25 -5 Q 21 -24 25 -38 Q 29 -42 34 -40 Q 36 -26 32 -5 Z" fill="url(#sk3)"/>
+    <path d="M 32 -7 Q 30 -26 34 -40 Q 38 -44 43 -42 Q 45 -28 41 -7 Z" fill="url(#sk3)"/>
+    <path d="M 14 0 Q 5 -7 8 -20 Q 12 -26 18 -22 Q 20 -13 17 0 Z" fill="url(#sk3)"/>
+    <!-- Fork held -->
+    <rect x="36" y="-50" width="4" height="48" rx="2" fill="rgba(200,180,140,.85)" transform="rotate(-6,36,-6)"/>
+    <line x1="34.5" y1="-48" x2="34.5" y2="-32" stroke="rgba(200,180,140,.88)" stroke-width="1.2" transform="rotate(-6,34.5,-40)"/>
+    <line x1="38.5" y1="-49" x2="38.5" y2="-33" stroke="rgba(200,180,140,.88)" stroke-width="1.2" transform="rotate(-6,38.5,-41)"/>
+    <!-- Nail hints -->
+    <ellipse cx="21" cy="-37" rx="3.5" ry="2" fill="rgba(240,210,180,.45)" transform="rotate(12,21,-37)"/>
+    <ellipse cx="29" cy="-40" rx="3.5" ry="2" fill="rgba(240,210,180,.45)"/>
+    <ellipse cx="37" cy="-41" rx="3.5" ry="2" fill="rgba(240,210,180,.45)"/>
+  </g>
+
+  <!-- HAND LEFT — pointing at phone (dark sweater, medium skin) -->
+  <g transform="translate(144,296)" filter="url(#fDrop)">
+    <path d="M 100 0 Q 78 12 50 34 Q 30 48 20 64 Z" fill="#5C2E38"/>
+    <path d="M 100 0 Q 80 12 54 32 Q 36 46 26 60 Z" fill="url(#sk4)"/>
+    <!-- Palm -->
+    <ellipse cx="28" cy="66" rx="22" ry="14" fill="url(#sk4)" transform="rotate(44,28,66)"/>
+    <!-- Pointing finger -->
+    <path d="M 18 64 Q 5 55 -4 46 Q -6 40 -2 35 Q 4 33 9 37 Q 16 46 24 60 Z" fill="url(#sk4)"/>
+    <ellipse cx="-2" cy="36" rx="3.5" ry="2.2" fill="rgba(180,120,80,.4)" transform="rotate(-44,-2,36)"/>
+    <!-- Curled fingers -->
+    <path d="M 24 62 Q 12 58 8 50 Q 8 44 14 44 Q 20 46 24 56 Z" fill="url(#sk4)"/>
+    <path d="M 30 66 Q 20 64 16 57 Q 16 51 22 52 Q 28 54 32 64 Z" fill="url(#sk4)"/>
+    <path d="M 36 68 Q 28 66 26 60 Q 27 55 32 56 Q 38 58 40 66 Z" fill="url(#sk4)"/>
+    <path d="M 22 76 Q 9 74 7 65 Q 9 59 15 62 Q 19 68 22 76 Z" fill="url(#sk4)"/>
+    <!-- Gold bracelet -->
+    <path d="M 50 36 Q 40 44 34 54" stroke="#C4A35A" stroke-width="3" fill="none" stroke-linecap="round" opacity=".82"/>
+    <path d="M 52 40 Q 42 48 36 58" stroke="#C4A35A" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".4"/>
+  </g>
+
+  <!-- ── VAULT PHONE — Split UI ── -->
+  <g transform="translate(554,228) rotate(7)" filter="url(#fPhone)">
+    <rect x="0" y="0" width="132" height="244" rx="18" ry="18" fill="#1A0A10"/>
+    <rect x="134" y="58" width="3" height="42" rx="1.5" fill="#2A1020"/>
+    <rect x="-3" y="48" width="3" height="26" rx="1.5" fill="#2A1020"/>
+    <rect x="-3" y="80" width="3" height="36" rx="1.5" fill="#2A1020"/>
+    <g clip-path="url(#phClip)">
+      <!-- Screen bg -->
+      <rect x="0" y="0" width="132" height="244" fill="#FDF0EB"/>
+      <!-- Dynamic island -->
+      <rect x="43" y="9" width="46" height="16" rx="8" fill="#1A0A10"/>
+      <!-- Status -->
+      <text x="12" y="22" font-family="Inter,sans-serif" font-size="7" fill="#5C2E38" font-weight="600">22:22</text>
+      <!-- Header -->
+      <rect x="0" y="30" width="132" height="88" fill="#5C2E38"/>
+      <rect x="0" y="102" width="132" height="16" fill="#5C2E38"/>
+      <!-- Header text -->
+      <text x="66" y="52" font-family="Inter,sans-serif" font-size="10" fill="white" font-weight="700" text-anchor="middle">Group Split</text>
+      <text x="66" y="66" font-family="Inter,sans-serif" font-size="6.5" fill="#EDAAB8" text-anchor="middle">Settle up with friends</text>
+      <!-- Stat boxes -->
+      <rect x="10" y="76" width="52" height="36" rx="9" fill="rgba(255,255,255,.12)"/>
+      <rect x="70" y="76" width="52" height="36" rx="9" fill="rgba(255,255,255,.12)"/>
+      <text x="36" y="89" font-family="Inter,sans-serif" font-size="5.5" fill="#EDAAB8" text-anchor="middle">You're owed</text>
+      <text x="36" y="103" font-family="Georgia,serif" font-size="11.5" fill="white" font-weight="700" text-anchor="middle">$70.80</text>
+      <text x="96" y="89" font-family="Inter,sans-serif" font-size="5.5" fill="#EDAAB8" text-anchor="middle">You owe</text>
+      <text x="96" y="103" font-family="Georgia,serif" font-size="11.5" fill="white" font-weight="700" text-anchor="middle">$42.50</text>
+      <!-- Body -->
+      <rect x="0" y="118" width="132" height="126" fill="#FDF0EB"/>
+      <!-- Label row -->
+      <text x="10" y="134" font-family="Inter,sans-serif" font-size="8.5" fill="#5C2E38" font-weight="700">Active (3)</text>
+      <rect x="96" y="122" width="28" height="15" rx="7.5" fill="#5C2E38"/>
+      <text x="110" y="133" font-family="Inter,sans-serif" font-size="6" fill="white" font-weight="600" text-anchor="middle">+ New</text>
+      <!-- Item 1 — selected -->
+      <rect x="8" y="140" width="116" height="44" rx="10" fill="#F9E2DA" stroke="#EDD5C8" stroke-width="1"/>
+      <text x="16" y="154" font-family="Inter,sans-serif" font-size="7.5" fill="#5C2E38" font-weight="700">Italian Dinner 🍝</text>
+      <text x="16" y="165" font-family="Inter,sans-serif" font-size="5.5" fill="#C4897A">Friends · Tonight</text>
+      <text x="116" y="154" font-family="Inter,sans-serif" font-size="7.5" fill="#2E7D32" font-weight="700" text-anchor="end">+$42</text>
+      <circle cx="18" cy="176" r="7" fill="#C4897A"/>
+      <circle cx="28" cy="176" r="7" fill="#EDAAB8"/>
+      <circle cx="38" cy="176" r="7" fill="#C4A35A"/>
+      <text x="18" y="179" font-family="Inter,sans-serif" font-size="5.5" fill="white" text-anchor="middle" font-weight="600">S</text>
+      <text x="28" y="179" font-family="Inter,sans-serif" font-size="5.5" fill="white" text-anchor="middle" font-weight="600">J</text>
+      <text x="38" y="179" font-family="Inter,sans-serif" font-size="5.5" fill="white" text-anchor="middle" font-weight="600">P</text>
+      <rect x="62" y="170" width="54" height="12" rx="6" fill="rgba(46,125,50,.13)" stroke="rgba(46,125,50,.3)" stroke-width="1"/>
+      <text x="89" y="179" font-family="Inter,sans-serif" font-size="5.5" fill="#2E7D32" text-anchor="middle" font-weight="600">Mark received ✓</text>
+      <!-- Item 2 -->
+      <rect x="8" y="190" width="116" height="32" rx="10" fill="#F9E2DA" stroke="#EDD5C8" stroke-width="1"/>
+      <text x="16" y="204" font-family="Inter,sans-serif" font-size="7.5" fill="#5C2E38" font-weight="700">Beach House 🏖️</text>
+      <text x="16" y="214" font-family="Inter,sans-serif" font-size="5.5" fill="#C4897A">Travel Crew</text>
+      <text x="116" y="204" font-family="Inter,sans-serif" font-size="7.5" fill="#5C2E38" font-weight="700" text-anchor="end">-$120</text>
+      <rect x="62" y="208" width="54" height="11" rx="6" fill="#5C2E38"/>
+      <text x="89" y="217" font-family="Inter,sans-serif" font-size="5.5" fill="white" text-anchor="middle" font-weight="600">Pay $120 →</text>
+      <!-- Home indicator -->
+      <rect x="46" y="230" width="40" height="3" rx="2" fill="rgba(92,46,56,.22)"/>
+    </g>
+    <rect x="0" y="0" width="132" height="244" rx="18" ry="18" fill="none" stroke="rgba(255,255,255,.09)" stroke-width="1.5"/>
+  </g>
+
+  <!-- ── RECEIPT on table ── -->
+  <g transform="translate(320,382) rotate(-18)" filter="url(#fSoft)">
+    <rect x="0" y="0" width="74" height="112" rx="4" fill="white" opacity=".93"/>
+    <text x="37" y="14" font-family="Georgia,serif" font-size="8.5" fill="#5C2E38" text-anchor="middle" font-weight="600">The Table</text>
+    <text x="37" y="24" font-family="Inter,sans-serif" font-size="6" fill="#C4897A" text-anchor="middle">Table 7 · Fri 21 Mar</text>
+    <line x1="7" y1="29" x2="67" y2="29" stroke="#EDD5C8" stroke-width="1"/>
+    <text x="8" y="40" font-family="Inter,sans-serif" font-size="6" fill="#7D3D4A">Pasta Amatriciana</text>
+    <text x="66" y="40" font-family="Inter,sans-serif" font-size="6" fill="#5C2E38" text-anchor="end">$28</text>
+    <text x="8" y="51" font-family="Inter,sans-serif" font-size="6" fill="#7D3D4A">Grilled Barramundi</text>
+    <text x="66" y="51" font-family="Inter,sans-serif" font-size="6" fill="#5C2E38" text-anchor="end">$34</text>
+    <text x="8" y="62" font-family="Inter,sans-serif" font-size="6" fill="#7D3D4A">Wagyu Sirloin</text>
+    <text x="66" y="62" font-family="Inter,sans-serif" font-size="6" fill="#5C2E38" text-anchor="end">$52</text>
+    <text x="8" y="73" font-family="Inter,sans-serif" font-size="6" fill="#7D3D4A">Wines × 4</text>
+    <text x="66" y="73" font-family="Inter,sans-serif" font-size="6" fill="#5C2E38" text-anchor="end">$72</text>
+    <line x1="7" y1="80" x2="67" y2="80" stroke="#EDD5C8" stroke-width="1"/>
+    <text x="8" y="91" font-family="Inter,sans-serif" font-size="7" fill="#5C2E38" font-weight="700">TOTAL</text>
+    <text x="66" y="91" font-family="Inter,sans-serif" font-size="7" fill="#5C2E38" font-weight="700" text-anchor="end">$186</text>
+    <text x="37" y="106" font-family="Inter,sans-serif" font-size="5.5" fill="#C4897A" text-anchor="middle">Split 4 ways with Vault →</text>
+  </g>
+
+  <!-- ── RIGHT COPY PANEL ── -->
+  <g transform="translate(918,0)">
+    <rect x="0" y="0" width="282" height="675" fill="rgba(26,10,16,.68)"/>
+    <rect x="0" y="0" width="282" height="2" fill="rgba(196,163,90,.3)"/>
+    <rect x="0" y="673" width="282" height="2" fill="rgba(196,163,90,.15)"/>
+    <!-- Logo -->
+    <g transform="translate(24,36)">
+      <circle cx="22" cy="22" r="20" fill="#7D3D4A" stroke="rgba(196,163,90,.28)" stroke-width="1"/>
+      <circle cx="22" cy="22" r="15" fill="none" stroke="rgba(196,163,90,.14)" stroke-width="1"/>
+      <path d="M 14 16 L 22 30 L 30 16" stroke="rgba(255,236,190,.85)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="56" y="50" font-family="Georgia,serif" font-size="18" fill="rgba(255,236,190,.85)" letter-spacing="3">VAULT</text>
+    <text x="56" y="64" font-family="Inter,sans-serif" font-size="7.5" fill="rgba(196,163,90,.52)" letter-spacing="2">SPLIT TAB</text>
+    <line x1="24" y1="82" x2="258" y2="82" stroke="rgba(196,163,90,.11)" stroke-width="1"/>
+    <!-- Headline -->
+    <text x="24" y="122" font-family="Georgia,serif" font-size="27" fill="rgba(255,236,190,.9)" font-weight="300">Shared costs</text>
+    <text x="24" y="154" font-family="Georgia,serif" font-size="27" fill="rgba(255,236,190,.9)" font-weight="300">without the</text>
+    <text x="24" y="186" font-family="Georgia,serif" font-size="27" fill="rgba(255,236,190,.9)" font-weight="300">awkward</text>
+    <text x="24" y="218" font-family="Georgia,serif" font-size="27" fill="rgba(255,236,190,.9)" font-weight="300">follow-up.</text>
+    <line x1="24" y1="236" x2="258" y2="236" stroke="rgba(196,163,90,.11)" stroke-width="1"/>
+    <!-- Features -->
+    <g transform="translate(24,258)">
+      <circle cx="10" cy="10" r="9" fill="rgba(196,163,90,.14)" stroke="rgba(196,163,90,.24)" stroke-width="1"/>
+      <text x="10" y="14" font-family="Inter,sans-serif" font-size="8" fill="#C4A35A" text-anchor="middle">✓</text>
+      <text x="27" y="15" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,236,190,.72)" font-weight="500">Add group expenses</text>
+      <circle cx="10" cy="44" r="9" fill="rgba(196,163,90,.14)" stroke="rgba(196,163,90,.24)" stroke-width="1"/>
+      <text x="10" y="48" font-family="Inter,sans-serif" font-size="8" fill="#C4A35A" text-anchor="middle">✓</text>
+      <text x="27" y="49" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,236,190,.72)" font-weight="500">Track who owes what</text>
+      <circle cx="10" cy="78" r="9" fill="rgba(196,163,90,.14)" stroke="rgba(196,163,90,.24)" stroke-width="1"/>
+      <text x="10" y="82" font-family="Inter,sans-serif" font-size="8" fill="#C4A35A" text-anchor="middle">✓</text>
+      <text x="27" y="83" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,236,190,.72)" font-weight="500">Settle with one tap</text>
+      <circle cx="10" cy="112" r="9" fill="rgba(196,163,90,.14)" stroke="rgba(196,163,90,.24)" stroke-width="1"/>
+      <text x="10" y="116" font-family="Inter,sans-serif" font-size="8" fill="#C4A35A" text-anchor="middle">✓</text>
+      <text x="27" y="117" font-family="Inter,sans-serif" font-size="10.5" fill="rgba(255,236,190,.72)" font-weight="500">Smart nudges sent</text>
+    </g>
+    <line x1="24" y1="402" x2="258" y2="402" stroke="rgba(196,163,90,.11)" stroke-width="1"/>
+    <!-- Stats -->
+    <g transform="translate(24,424)">
+      <text font-family="Georgia,serif" font-size="36" fill="rgba(255,236,190,.9)" font-weight="300">$186</text>
+      <text x="0" y="22" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(196,163,90,.5)" letter-spacing="1">AVG DINNER · 4 PEOPLE</text>
+    </g>
+    <g transform="translate(24,488)">
+      <text font-family="Georgia,serif" font-size="36" fill="rgba(255,236,190,.9)" font-weight="300">$46.50</text>
+      <text x="0" y="22" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(196,163,90,.5)" letter-spacing="1">EACH · SPLIT INSTANTLY</text>
+    </g>
+    <line x1="24" y1="538" x2="258" y2="538" stroke="rgba(196,163,90,.11)" stroke-width="1"/>
+    <!-- CTA -->
+    <rect x="24" y="558" width="218" height="50" rx="12" fill="#5C2E38" stroke="rgba(196,163,90,.28)" stroke-width="1"/>
+    <text x="133" y="587" font-family="Inter,sans-serif" font-size="13" fill="white" font-weight="700" text-anchor="middle">Split with Vault →</text>
+    <!-- Footer -->
+    <text x="133" y="644" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(196,163,90,.28)" text-anchor="middle" letter-spacing="2">YOUR MONEY · BEAUTIFULLY KEPT</text>
+  </g>
+
+  <!-- Final candle ambient glow over everything -->
+  <ellipse cx="500" cy="330" rx="290" ry="205" fill="url(#candleHalo)" opacity=".55"/>
+  <ellipse cx="500" cy="318" rx="148" ry="105" fill="url(#candleHalo)" opacity=".38"/>
+</svg>

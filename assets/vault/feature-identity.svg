@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560" width="560" height="560">
+  <defs>
+    <linearGradient id="bg05" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A1018"/>
+      <stop offset="60%" stop-color="#3D1C24"/>
+      <stop offset="100%" stop-color="#5C2E38"/>
+    </linearGradient>
+    <linearGradient id="phone05" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2A1018"/>
+      <stop offset="100%" stop-color="#1A0A10"/>
+    </linearGradient>
+    <linearGradient id="faceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8C4A8"/>
+      <stop offset="100%" stop-color="#D4A882"/>
+    </linearGradient>
+    <radialGradient id="scanGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C4A35A" stop-opacity=".4"/>
+      <stop offset="100%" stop-color="#C4A35A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="approvedGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4CAF50" stop-opacity=".35"/>
+      <stop offset="100%" stop-color="#4CAF50" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sh05">
+      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#000" flood-opacity=".5"/>
+    </filter>
+    <clipPath id="phoneClip05">
+      <rect x="0" y="0" width="220" height="440" rx="32" ry="32"/>
+    </clipPath>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="560" height="560" fill="url(#bg05)"/>
+
+  <!-- Background grid dots -->
+  <g opacity=".07">
+    <pattern id="dots05" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="1.5" fill="#C4A35A"/>
+    </pattern>
+    <rect width="560" height="560" fill="url(#dots05)"/>
+  </g>
+
+  <!-- Outer glow ring for approved state -->
+  <ellipse cx="280" cy="280" rx="230" ry="230" fill="url(#approvedGlow)"/>
+  <circle cx="280" cy="280" r="210" fill="none" stroke="rgba(76,175,80,.15)" stroke-width="1"/>
+
+  <!-- Phone body -->
+  <g transform="translate(170, 55)" filter="url(#sh05)">
+    <rect x="0" y="0" width="220" height="440" rx="32" ry="32" fill="url(#phone05)"/>
+    <!-- Side button -->
+    <rect x="224" y="100" width="4" height="60" rx="2" fill="#333"/>
+
+    <g clip-path="url(#phoneClip05)">
+      <!-- Screen dark bg -->
+      <rect x="0" y="0" width="220" height="440" fill="#1A0A10"/>
+      <!-- Dynamic island -->
+      <rect x="75" y="14" width="70" height="22" rx="11" fill="#0A0008"/>
+
+      <!-- Status bar -->
+      <text x="18" y="32" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,.6)" font-weight="600">22:22</text>
+
+      <!-- Header -->
+      <text x="110" y="74" font-family="Inter,sans-serif" font-size="12" fill="white" font-weight="700" text-anchor="middle">Verify Identity</text>
+      <text x="110" y="90" font-family="Inter,sans-serif" font-size="9" fill="rgba(196,163,90,.7)" text-anchor="middle">Look at your camera</text>
+
+      <!-- Face scan frame -->
+      <rect x="30" y="105" width="160" height="180" rx="20" fill="rgba(196,163,90,.06)" stroke="rgba(196,163,90,.5)" stroke-width="2"/>
+      <!-- Corner brackets -->
+      <path d="M 30 125 L 30 105 L 50 105" stroke="#C4A35A" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 170 105 L 190 105 L 190 125" stroke="#C4A35A" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 30 265 L 30 285 L 50 285" stroke="#C4A35A" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 190 265 L 190 285 L 170 285" stroke="#C4A35A" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+      <!-- Face illustration inside frame -->
+      <!-- Head -->
+      <ellipse cx="110" cy="185" rx="55" ry="62" fill="url(#faceGrad)"/>
+      <!-- Hair -->
+      <path d="M 55 162 Q 55 120 85 112 Q 110 108 135 112 Q 165 120 165 162 Q 152 140 110 138 Q 68 140 55 162 Z" fill="#3D2418"/>
+      <!-- Eyes -->
+      <ellipse cx="90" cy="180" rx="7" ry="8" fill="#3D2418"/>
+      <ellipse cx="130" cy="180" rx="7" ry="8" fill="#3D2418"/>
+      <!-- Eye highlights -->
+      <circle cx="93" cy="177" r="2.5" fill="white" opacity=".5"/>
+      <circle cx="133" cy="177" r="2.5" fill="white" opacity=".5"/>
+      <!-- Nose -->
+      <path d="M 108 192 Q 104 208 108 212 Q 112 216 118 212" stroke="#C4897A" stroke-width="1.5" fill="none"/>
+      <!-- Mouth -->
+      <path d="M 94 222 Q 110 232 126 222" stroke="#C4897A" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <!-- Cheeks blush -->
+      <ellipse cx="80" cy="210" rx="10" ry="7" fill="#EDAAB8" opacity=".35"/>
+      <ellipse cx="140" cy="210" rx="10" ry="7" fill="#EDAAB8" opacity=".35"/>
+
+      <!-- Scan line animation effect -->
+      <rect x="32" y="172" width="156" height="2" fill="rgba(196,163,90,.5)" opacity=".8">
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 100;0 0" dur="2.5s" repeatCount="indefinite"/>
+      </rect>
+
+      <!-- Scan glow -->
+      <ellipse cx="110" cy="190" rx="70" ry="70" fill="url(#scanGlow)"/>
+
+      <!-- Dot mesh (FaceID style) -->
+      <g fill="rgba(196,163,90,.35)" font-size="4">
+        <circle cx="65" cy="130" r="1.5"/>
+        <circle cx="80" cy="118" r="1.5"/>
+        <circle cx="95" cy="112" r="1.5"/>
+        <circle cx="110" cy="110" r="1.5"/>
+        <circle cx="125" cy="112" r="1.5"/>
+        <circle cx="140" cy="118" r="1.5"/>
+        <circle cx="155" cy="130" r="1.5"/>
+        <circle cx="60" cy="148" r="1.5"/>
+        <circle cx="160" cy="148" r="1.5"/>
+        <circle cx="58" cy="168" r="1.5"/>
+        <circle cx="162" cy="168" r="1.5"/>
+        <circle cx="56" cy="190" r="1.5"/>
+        <circle cx="164" cy="190" r="1.5"/>
+        <circle cx="58" cy="212" r="1.5"/>
+        <circle cx="162" cy="212" r="1.5"/>
+        <circle cx="62" cy="235" r="1.5"/>
+        <circle cx="158" cy="235" r="1.5"/>
+        <circle cx="75" cy="255" r="1.5"/>
+        <circle cx="145" cy="255" r="1.5"/>
+        <circle cx="95" cy="268" r="1.5"/>
+        <circle cx="125" cy="268" r="1.5"/>
+      </g>
+
+      <!-- Approved checkmark overlay -->
+      <circle cx="110" cy="310" r="28" fill="#2E7D32"/>
+      <circle cx="110" cy="310" r="24" fill="#388E3C"/>
+      <path d="M 96 310 L 106 320 L 126 298" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <text x="110" y="358" font-family="Inter,sans-serif" font-size="10" fill="white" font-weight="700" text-anchor="middle">Identity Verified</text>
+      <text x="110" y="373" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,.55)" text-anchor="middle">Australian Driver's Licence · Matched</text>
+
+      <!-- Progress bar complete -->
+      <rect x="30" y="392" width="160" height="4" rx="2" fill="rgba(255,255,255,.15)"/>
+      <rect x="30" y="392" width="160" height="4" rx="2" fill="#4CAF50"/>
+
+      <!-- Home indicator -->
+      <rect x="80" y="425" width="60" height="3" rx="2" fill="rgba(255,255,255,.3)"/>
+    </g>
+
+    <!-- Phone frame border -->
+    <rect x="0" y="0" width="220" height="440" rx="32" ry="32" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1.5"/>
+  </g>
+
+  <!-- Trust copy -->
+  <text x="280" y="520" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,230,180,.7)" font-weight="600" text-anchor="middle">Secure · Private · AML/CTF Compliant</text>
+  <text x="280" y="540" font-family="Inter,sans-serif" font-size="9" fill="rgba(196,163,90,.4)" text-anchor="middle" letter-spacing="2">VAULT · IDENTITY VERIFICATION</text>
+
+  <!-- Corner accents -->
+  <path d="M 30 30 L 30 16 L 44 16" stroke="rgba(196,163,90,.3)" stroke-width="2" fill="none"/>
+  <path d="M 530 30 L 530 16 L 516 16" stroke="rgba(196,163,90,.3)" stroke-width="2" fill="none"/>
+  <path d="M 30 530 L 30 544 L 44 544" stroke="rgba(196,163,90,.3)" stroke-width="2" fill="none"/>
+  <path d="M 530 530 L 530 544 L 516 544" stroke="rgba(196,163,90,.3)" stroke-width="2" fill="none"/>
+</svg>

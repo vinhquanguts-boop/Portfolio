@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Portfolio of Vinh Quang Phung, an interaction designer focused on calm, trustworthy digital products and fintech user experiences."
+    />
+    <title>Vinh Phung | Interaction Design Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Vinh Phung portfolio home">
+        <span>VP</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="work.html">Work</a>
+        <a href="#process">Process</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="header-contact" href="mailto:vinhquang.uts@gmail.com">Email</a>
+    </header>
+
+    <main id="top">
+      <section class="hero section-frame" aria-labelledby="hero-title">
+        <div class="rail-label" aria-hidden="true">
+          <span>Portfolio</span>
+          <span>2026</span>
+        </div>
+        <div class="hero-media">
+          <div class="hero-editorial" aria-label="Vault Bank project visual preview">
+            <figure class="hero-screen-artifact">
+              <img src="assets/Vault Bank Posters/Home Screen.png" alt="Vault Bank home screen" />
+            </figure>
+            <figure class="hero-card-artifact">
+              <img src="assets/vault/vault_card_front.png" alt="Vault Bank premium debit card" />
+            </figure>
+          </div>
+        </div>
+        <div class="hero-copy">
+          <p class="tiny-label">Sydney, Australia</p>
+          <h1 id="hero-title">VINH PHUNG</h1>
+          <p class="hero-statement">
+            Interaction designer shaping calm, trustworthy digital products through research,
+            clear flows and polished high-fidelity prototypes.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="work.html">View Work</a>
+            <a class="button quiet" href="#contact">Contact</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="profile-strip" id="about" aria-labelledby="about-title">
+        <div class="section-index">01</div>
+        <div>
+          <h2 id="about-title">Interaction design student with a product mindset.</h2>
+        </div>
+        <div class="profile-body">
+          <p>
+            I am Vinh Quang Phung, also known as Harry, an Interaction Design student at the
+            University of Technology Sydney. My work focuses on intuitive financial interfaces,
+            end-to-end digital product design and visual systems that make complex actions feel
+            approachable.
+          </p>
+          <dl class="profile-facts">
+            <div>
+              <dt>Education</dt>
+              <dd>Bachelor of Information Technology, Interaction Design</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>UX research, UI design, flows, prototypes, testing</dd>
+            </div>
+            <div>
+              <dt>Tools</dt>
+              <dd>Figma, Affinity, Canva, HTML, CSS</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="work-section section-frame" id="work" aria-labelledby="work-title">
+        <div class="rail-label" aria-hidden="true">
+          <span>Featured</span>
+          <span>Work</span>
+        </div>
+        <div class="section-heading">
+          <span class="section-index">02</span>
+          <h2 id="work-title">Selected work</h2>
+          <p>
+            The first case study is Vault Bank, a complete fintech concept built around everyday
+            money, savings, group expenses and beginner-friendly wealth-building.
+          </p>
+        </div>
+        <div id="project-list" class="project-list" aria-live="polite"></div>
+      </section>
+
+      <section class="process-section" id="process" aria-labelledby="process-title">
+        <div class="section-heading compact">
+          <span class="section-index">04</span>
+          <h2 id="process-title">Process</h2>
+        </div>
+        <div class="process-line" id="process-list"></div>
+      </section>
+
+      <section class="skills-section section-frame" id="skills" aria-labelledby="skills-title">
+        <div class="rail-label" aria-hidden="true">
+          <span>Skills</span>
+          <span>Tools</span>
+        </div>
+        <div class="section-heading">
+          <span class="section-index">05</span>
+          <h2 id="skills-title">Design strengths</h2>
+          <p>
+            A practical toolkit for moving from research and product intent into polished,
+            testable digital experiences.
+          </p>
+        </div>
+        <div class="skill-columns">
+          <div>
+            <h3>UX Design</h3>
+            <ul>
+              <li>User research and interviews</li>
+              <li>Personas and journey mapping</li>
+              <li>User flows and wireframing</li>
+              <li>Usability testing</li>
+            </ul>
+          </div>
+          <div>
+            <h3>UI Design</h3>
+            <ul>
+              <li>Visual hierarchy</li>
+              <li>Design systems</li>
+              <li>Mobile-first interfaces</li>
+              <li>High-fidelity prototyping</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Tools</h3>
+            <ul>
+              <li>Figma</li>
+              <li>Affinity</li>
+              <li>Canva</li>
+              <li>HTML and CSS basics</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="contact-section" id="contact">
+      <div>
+        <span class="section-index">06</span>
+        <h2>Contact</h2>
+      </div>
+      <address class="contact-links">
+        <a href="mailto:vinhquang.uts@gmail.com">vinhquang.uts@gmail.com</a>
+        <a href="tel:+61452516034">04 5251 6034</a>
+        <span>Sydney, NSW</span>
+      </address>
+      <p class="footer-note">Available for portfolio review, internships and junior UX/UI opportunities.</p>
+    </footer>
+
+    <script src="data/projects.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
