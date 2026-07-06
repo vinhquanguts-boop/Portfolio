@@ -5,64 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Selected UX and product design work by Vinh Phung, including the Vault Bank fintech case study."
+      content="Selected work from Interface Field Notes, the portfolio of Vinh Phung."
     />
-    <title>Work | Vinh Phung Portfolio</title>
+    <title>Work | Interface Field Notes</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header" data-header>
-      <a class="brand" href="index.html" aria-label="Vinh Phung portfolio home">
-        <span>VP</span>
+      <a class="brand-mark" href="index.html" aria-label="Interface Field Notes home">
+        <span>IFN</span>
+        <small>Vinh Phung</small>
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="index.html#about">About</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html#identity">Identity</a>
         <a href="work.html" aria-current="page">Work</a>
+        <a href="index.html#principles">Principles</a>
+        <a href="index.html#playground">Playground</a>
         <a href="index.html#process">Process</a>
-        <a href="index.html#skills">Skills</a>
+        <a href="index.html#about">About</a>
         <a href="index.html#contact">Contact</a>
       </nav>
-      <a class="header-contact" href="mailto:vinhquang.uts@gmail.com">Email</a>
     </header>
 
     <main>
-      <section class="work-hero section-frame">
-        <div class="rail-label" aria-hidden="true">
+      <section class="work-hero grid-shell page-hero" aria-labelledby="work-title">
+        <div class="section-rail" aria-hidden="true">
+          <span>Work archive</span>
           <span>Selected</span>
-          <span>Work</span>
         </div>
-        <div class="work-hero-copy">
-          <a class="back-link" href="index.html">Back home</a>
-          <p class="tiny-label">UX / UI case studies</p>
-          <h1>WORK</h1>
-          <p class="hero-statement">
-            A focused collection of product design work, starting with Vault Bank and expanding as
-            new projects are added.
+        <div class="page-hero-copy">
+          <p class="micro-label">Project evidence / Product thinking / Interface craft</p>
+          <h1 id="work-title">Selected work, structured for review.</h1>
+          <p class="lead">
+            A compact archive of product design work with enough context to understand the problem,
+            process, artifacts, and result.
           </p>
         </div>
+        <aside class="status-module" aria-label="Work index status">
+          <div>
+            <span>Current project</span>
+            <strong>Vault Bank</strong>
+          </div>
+          <div>
+            <span>Format</span>
+            <strong>Overview<br />Case study<br />Artifacts</strong>
+          </div>
+          <div>
+            <span>Next update</span>
+            <strong>Future projects</strong>
+          </div>
+        </aside>
       </section>
 
-      <section class="work-overview" aria-labelledby="work-overview-title">
+      <section class="work-index-section page-section" aria-labelledby="project-index-title">
+        <div class="section-kicker">Project index</div>
         <div class="section-heading">
-          <span class="section-index">01</span>
-          <h2 id="work-overview-title">Project index</h2>
+          <h2 id="project-index-title">Vault Bank is the first detailed case study.</h2>
           <p>
-            Each project opens into a separate deep-dive page with process, prototype links,
-            visuals and outcomes.
+            The old project material is restored here in the new visual system, with a direct route
+            into the deeper product story.
           </p>
         </div>
-        <div id="work-overview-list" class="project-list"></div>
+        <div data-work-list></div>
+      </section>
+
+      <section class="future-work-section page-section" aria-labelledby="future-work-title">
+        <div class="section-kicker">Future work</div>
+        <div class="future-work-card">
+          <div>
+            <h2 id="future-work-title">More projects can be added without rebuilding the system.</h2>
+            <p>
+              Add the next project to the shared project data and place its artifacts in the assets
+              folder. The overview and case-study rhythm can stay consistent.
+            </p>
+          </div>
+          <span>Slot 02</span>
+        </div>
       </section>
     </main>
 
-    <footer class="contact-section small-footer">
-      <div>
-        <span class="section-index">Contact</span>
-        <h2>Let us talk</h2>
+    <footer class="contact-section compact-footer" id="contact">
+      <div class="contact-copy">
+        <span class="section-kicker">Contact</span>
+        <h2>Discuss the next project.</h2>
       </div>
-      <address class="contact-links">
+      <address class="contact-card">
         <a href="mailto:vinhquang.uts@gmail.com">vinhquang.uts@gmail.com</a>
-        <a href="tel:+61452516034">04 5251 6034</a>
+        <a href="tel:+61452516034">0452 516 034</a>
+        <a href="../Vinh%20Phung%20(CV).docx">Resume download</a>
+        <span>Sydney, Australia</span>
       </address>
     </footer>
 

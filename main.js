@@ -1,311 +1,44 @@
 (function () {
-  const projects = window.PORTFOLIO_PROJECTS || [];
   const header = document.querySelector("[data-header]");
+  const navLinks = [...document.querySelectorAll(".site-nav a")];
+  const studies = [...document.querySelectorAll("[data-study]")];
+  const projects = window.PORTFOLIO_PROJECTS || [];
+  const isProjectPage = window.location.pathname.replace(/\\/g, "/").includes("/projects/");
 
-  function assetPath(project, src) {
-    const depth = document.body.dataset.depth || "root";
-    return depth === "nested" ? `../${src}` : src;
+  function onScroll() {
+    if (!header) return;
+    header.classList.toggle("is-scrolled", window.scrollY > 18);
+  }
+
+  function escapeHtml(value) {
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function assetPath(src) {
+    if (!src) return "";
+    if (/^(https?:|mailto:|tel:|#)/.test(src)) return src;
+    if (src.startsWith("../")) return src;
+    return `${isProjectPage ? "../" : ""}${src}`;
   }
 
   function pagePath(path) {
-    const depth = document.body.dataset.depth || "root";
-    return depth === "nested" ? `../${path}` : path;
+    if (!path) return "#";
+    if (/^(https?:|mailto:|tel:|#)/.test(path)) return path;
+    return `${isProjectPage ? "../" : ""}${path}`;
   }
 
-  function makeProjectCard(project, index, options = {}) {
-    const article = document.createElement("article");
-    article.className = options.compact ? "project-feature compact-card" : "project-feature";
-    article.innerHTML = `
-      <div class="project-meta">
-        <span>${String(index + 1).padStart(2, "0")}</span>
-        <span>${project.category}</span>
-        <span>${project.year}</span>
-      </div>
-      <div class="project-copy">
-        <h3>${project.title}</h3>
-        <p>${project.summary}</p>
-        <div class="tag-row">
-          ${project.role.map((item) => `<span>${item}</span>`).join("")}
-        </div>
-        <div class="link-row">
-          <a href="${pagePath(project.links.caseStudy)}">Read case study</a>
-          <a href="${project.links.figma}" target="_blank" rel="noreferrer">View Figma Prototype</a>
-          <a href="${project.links.live}" target="_blank" rel="noreferrer">Open Live Vault Demo</a>
-        </div>
-      </div>
-      <a class="project-visuals clean-project-visuals" href="${pagePath(project.links.caseStudy)}" aria-label="Open ${project.title} case study">
-        <figure>
-          <img class="screen-shot" src="${assetPath(project, project.assets.homeScreen || project.assets.launchFlow)}" alt="${project.title} home screen" />
-        </figure>
-        <figure>
-          <img class="card-shot" src="${assetPath(project, project.assets.cardFront)}" alt="${project.title} premium card visual" />
-        </figure>
-      </a>
-    `;
-    return article;
+  function listItems(items, className) {
+    return (items || [])
+      .map((item) => `<li${className ? ` class="${className}"` : ""}>${escapeHtml(item)}</li>`)
+      .join("");
   }
 
-  function renderHome() {
-    const projectList = document.querySelector("#project-list");
-    const processList = document.querySelector("#process-list");
-    if (!projectList || !projects.length) return;
-
-    projectList.replaceChildren(...projects.map((project, index) => makeProjectCard(project, index)));
-
-    if (processList) {
-      const activeProject = projects[0];
-      processList.replaceChildren(
-        ...activeProject.process.map((step, index) => {
-          const item = document.createElement("article");
-          item.className = "process-step";
-          item.innerHTML = `
-            <span>${String(index + 1).padStart(2, "0")}</span>
-            <h3>${step.label}</h3>
-            <p>${step.text}</p>
-          `;
-          return item;
-        })
-      );
-    }
-  }
-
-  function renderWorkPage() {
-    const workList = document.querySelector("#work-overview-list");
-    if (!workList) return;
-    workList.replaceChildren(...projects.map((project, index) => makeProjectCard(project, index, { compact: true })));
-  }
-
-  function renderCaseStudy() {
-    const mount = document.querySelector("#case-study-detail");
-    if (!mount || !projects.length) return;
-
-    const slug = mount.dataset.project || "vault-bank";
-    const project = projects.find((item) => item.slug === slug) || projects[0];
-
-    const personasHTML = project.personas && project.personas.length
-      ? `
-        <section class="personas-section section-frame">
-          <div class="rail-label" aria-hidden="true">
-            <span>User</span>
-            <span>Research</span>
-          </div>
-          <div class="section-heading">
-            <span class="section-index">02</span>
-            <h2>Four real people. Four distinct problems.</h2>
-            <p>Each persona drove specific features, flows and UI decisions in Vault.</p>
-          </div>
-          <div class="personas-grid">
-            ${project.personas.map((persona) => `
-              <article class="persona-card">
-                <div class="persona-header">
-                  <span class="persona-avatar" aria-hidden="true">${persona.avatar}</span>
-                  <div>
-                    <h3>${persona.name}</h3>
-                    <p class="persona-role">${persona.age} &middot; ${persona.role} &middot; ${persona.city}</p>
-                  </div>
-                </div>
-                <blockquote class="persona-quote">&ldquo;${persona.quote}&rdquo;</blockquote>
-                <div class="persona-stat">
-                  <span class="stat-label">${persona.topPain}</span>
-                  <div class="stat-bar-track">
-                    <div class="stat-bar-fill" style="width:${persona.painScore}%"></div>
-                  </div>
-                  <span class="stat-note">${persona.painLabel}</span>
-                </div>
-                <p class="persona-goal"><strong>Goals:</strong> ${persona.goal}</p>
-                <p class="persona-vault">${persona.whyVault}</p>
-              </article>
-            `).join("")}
-          </div>
-          ${project.assets.personaBoard ? `
-            <figure class="persona-board">
-              <img src="../${project.assets.personaBoard}" alt="Sarah Mitchell persona board research artifact" loading="lazy" />
-              <figcaption>Primary persona board - Sarah Mitchell, 31, Melbourne</figcaption>
-            </figure>
-          ` : ""}
-        </section>
-      `
-      : "";
-
-    const featuresHTML = project.features && project.features.length
-      ? `
-        <section class="features-section section-frame">
-          <div class="rail-label" aria-hidden="true">
-            <span>Key</span>
-            <span>Features</span>
-          </div>
-          <div class="section-heading">
-            <span class="section-index">03</span>
-            <h2>Built around the moments that matter.</h2>
-            <p>Each feature illustration maps directly to a user pain point discovered in research.</p>
-          </div>
-          <div class="features-strip">
-            ${project.features.map((feat) => `
-              <figure class="feature-tile">
-                <div class="feature-img-wrap">
-                  <img src="../${feat.src}" alt="${feat.label} feature illustration" loading="lazy" />
-                </div>
-                <figcaption>
-                  <strong>${feat.label}</strong>
-                  <span>${feat.caption}</span>
-                </figcaption>
-              </figure>
-            `).join("")}
-          </div>
-        </section>
-      `
-      : "";
-
-    const brandHTML = project.assets.brandArtifacts
-      ? `
-        <section class="brand-section section-frame">
-          <div class="rail-label" aria-hidden="true">
-            <span>Visual</span>
-            <span>Identity</span>
-          </div>
-          <div class="section-heading">
-            <span class="section-index">04</span>
-            <h2>A warm identity apart from bank-blue fintech.</h2>
-            <p>Deep rose, plum and gold define a brand built on trust without institutional coldness.</p>
-          </div>
-          <div class="brand-grid">
-            <figure>
-              <img src="../${project.assets.brandArtifacts.poster}" alt="Vault Bank launch poster" loading="lazy" />
-              <figcaption>App launch poster</figcaption>
-            </figure>
-            <figure>
-              <img src="../${project.assets.brandArtifacts.cardFrontShadow}" alt="Vault card front render" loading="lazy" />
-              <figcaption>Physical card &mdash; front</figcaption>
-            </figure>
-            <figure>
-              <img src="../${project.assets.brandArtifacts.cardBackShadow}" alt="Vault card back render" loading="lazy" />
-              <figcaption>Physical card &mdash; back</figcaption>
-            </figure>
-          </div>
-        </section>
-      `
-      : "";
-
-    const protoScreensHTML = project.assets.prototypeScreens && project.assets.prototypeScreens.length
-      ? `
-        <div class="proto-screens">
-          ${project.assets.prototypeScreens.map((src) => {
-            const label = src.split("/").pop().replace(".png", "");
-            return `<figure>
-              <img src="../${src}" alt="${label} screen" loading="lazy" />
-              <figcaption>${label}</figcaption>
-            </figure>`;
-          }).join("")}
-        </div>
-      `
-      : "";
-
-    mount.innerHTML = `
-      <section class="case-detail-hero section-frame">
-        <div class="rail-label" aria-hidden="true">
-          <span>Case</span>
-          <span>Study</span>
-        </div>
-        <div class="case-detail-copy">
-          <a class="back-link" href="../work.html">Back to work</a>
-          <p class="tiny-label">${project.category} / ${project.year}</p>
-          <h1>${project.title}</h1>
-          <p class="hero-statement">${project.hero}</p>
-          <div class="hero-actions">
-            <a class="button primary" href="${project.prototype.figma}" target="_blank" rel="noreferrer">View Figma Prototype</a>
-            <a class="button quiet" href="${project.prototype.live}" target="_blank" rel="noreferrer">Open Live Vault Demo</a>
-          </div>
-        </div>
-        <div class="case-detail-visual">
-          <div class="case-artifact-pair">
-            <figure class="case-screen-artifact">
-              <img src="../${project.assets.homeScreen}" alt="Vault Bank home screen" />
-              <figcaption>Home screen</figcaption>
-            </figure>
-            <figure class="case-card-artifact">
-              <img src="../${project.assets.cardFront}" alt="Vault debit card" />
-              <figcaption>Premium debit card</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <section class="case-story">
-        <div class="case-facts">
-          <div><span>Role</span><p>${project.role.join(", ")}</p></div>
-          <div><span>Tools</span><p>${project.tools.join(", ")}</p></div>
-          <div><span>Problem</span><p>${project.problem}</p></div>
-        </div>
-        <div class="story-stack">
-          ${project.sections
-            .map(
-              (section, index) => `
-                <article class="story-row">
-                  <span>${String(index + 1).padStart(2, "0")} / ${section.label}</span>
-                  <h2>${section.title}</h2>
-                  <p>${section.body}</p>
-                </article>
-              `
-            )
-            .join("")}
-        </div>
-      </section>
-
-      ${personasHTML}
-
-      ${featuresHTML}
-
-      ${brandHTML}
-
-      <section class="gallery-section section-frame">
-        <div class="rail-label" aria-hidden="true">
-          <span>Project</span>
-          <span>Screens</span>
-        </div>
-        <div class="section-heading">
-          <span class="section-index">05</span>
-          <h2>Prototype screens</h2>
-          <p>High-fidelity screens from the Vault Bank Figma prototype.</p>
-        </div>
-        ${protoScreensHTML}
-        <div class="case-gallery supplemental-gallery">
-          ${project.gallery
-            .map(
-              (item) => `
-                <figure>
-                  <img src="../${item.src}" alt="${item.alt}" loading="lazy" />
-                  <figcaption>${item.caption}</figcaption>
-                </figure>
-              `
-            )
-            .join("")}
-        </div>
-      </section>
-
-      <section class="prototype-section">
-        <div>
-          <span class="section-index">06</span>
-          <h2>Prototype access</h2>
-          <p>Review the Figma prototype for screen-by-screen interaction detail, or open the live Vault demo to explore the rebuilt web experience.</p>
-          <div class="case-links">
-            <a class="button primary" href="${project.prototype.figma}" target="_blank" rel="noreferrer">View Figma Prototype</a>
-            <a class="button quiet" href="${project.prototype.live}" target="_blank" rel="noreferrer">Open Live Vault Demo</a>
-          </div>
-        </div>
-        <img src="../${project.assets.virtualCard || project.prototype.preview}" alt="${project.title} virtual card screen" />
-      </section>
-
-      <section class="outcome-section">
-        <span class="section-index">07</span>
-        <h2>Outcomes</h2>
-        <ul>
-          ${project.outcomes.map((outcome) => `<li>${outcome}</li>`).join("")}
-        </ul>
-      </section>
-    `;
-  }
-
-  function bindSmoothScroll() {
+  function bindSmoothAnchors() {
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
       link.addEventListener("click", (event) => {
         const target = document.querySelector(link.getAttribute("href"));
@@ -316,18 +49,244 @@
     });
   }
 
-  function bindHeaderState() {
-    if (!header) return;
-    const update = () => {
-      header.classList.toggle("is-scrolled", window.scrollY > 24);
-    };
-    update();
-    window.addEventListener("scroll", update, { passive: true });
+  function bindActiveNav() {
+    const hashLinks = navLinks.filter((link) => (link.getAttribute("href") || "").startsWith("#"));
+    const targets = hashLinks
+      .map((link) => document.querySelector(link.getAttribute("href")))
+      .filter(Boolean);
+
+    if (!targets.length || !("IntersectionObserver" in window)) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.find((entry) => entry.isIntersecting);
+        if (!visible) return;
+        hashLinks.forEach((link) => {
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${visible.target.id}`);
+        });
+      },
+      { rootMargin: "-35% 0px -50% 0px", threshold: 0 }
+    );
+
+    targets.forEach((target) => observer.observe(target));
   }
 
-  renderHome();
-  renderWorkPage();
+  function bindStudies() {
+    studies.forEach((study) => {
+      const button = study.querySelector("[data-next-state]");
+      const states = (study.dataset.states || "").split("|").filter(Boolean);
+      if (!button || !states.length) return;
+
+      let index = 0;
+      button.textContent = states[index];
+
+      button.addEventListener("click", () => {
+        index = (index + 1) % states.length;
+        button.textContent = states[index];
+        study.dataset.activeState = String(index);
+      });
+    });
+  }
+
+  function projectVisuals(project) {
+    const assets = project.assets || {};
+    return [
+      assets.cardFront,
+      assets.homeScreen,
+      assets.virtualCard,
+      project.gallery?.[1]?.src
+    ].filter(Boolean);
+  }
+
+  function renderProjectCard(project, variant) {
+    const visuals = projectVisuals(project);
+    const role = (project.role || []).slice(0, 4);
+    const tools = (project.tools || []).slice(0, 5);
+    const isFeatured = variant === "featured";
+
+    return `
+      <article class="work-card ${isFeatured ? "featured-work-card" : "index-work-card"}">
+        <div class="work-card-copy">
+          <div class="file-topline">
+            <span>${escapeHtml(project.category)}</span>
+            <span>${escapeHtml(project.year)}</span>
+          </div>
+          <h3>${escapeHtml(project.title)}</h3>
+          <p>${escapeHtml(isFeatured ? project.hero || project.summary : project.summary)}</p>
+          <dl class="work-meta">
+            <div><dt>Role</dt><dd>${role.map(escapeHtml).join(" / ")}</dd></div>
+            <div><dt>Tools</dt><dd>${tools.map(escapeHtml).join(" / ")}</dd></div>
+          </dl>
+          <div class="work-actions">
+            <a class="text-button" href="${pagePath(project.links?.caseStudy || `projects/${project.slug}.html`)}">View Case Study</a>
+            <a class="text-button secondary-link" href="${escapeHtml(project.links?.figma || project.prototype?.figma)}" target="_blank" rel="noreferrer">View Figma Prototype</a>
+          </div>
+        </div>
+        <div class="work-card-visuals" aria-label="${escapeHtml(project.title)} visual artifacts">
+          ${visuals
+            .slice(0, isFeatured ? 3 : 4)
+            .map(
+              (src, index) => `
+                <figure class="artifact artifact-${index + 1}">
+                  <img src="${assetPath(src)}" alt="${escapeHtml(project.title)} artifact ${index + 1}" loading="lazy" />
+                  <figcaption>${index === 0 ? "Card system" : index === 1 ? "Home screen" : index === 2 ? "Prototype" : "Brand board"}</figcaption>
+                </figure>
+              `
+            )
+            .join("")}
+        </div>
+      </article>
+    `;
+  }
+
+  function renderFeaturedWork() {
+    const container = document.querySelector("[data-featured-work]");
+    if (!container || !projects.length) return;
+    container.innerHTML = renderProjectCard(projects[0], "featured");
+  }
+
+  function renderWorkList() {
+    const container = document.querySelector("[data-work-list]");
+    if (!container || !projects.length) return;
+    container.innerHTML = projects.map((project) => renderProjectCard(project, "index")).join("");
+  }
+
+  function renderImageFigure(src, alt, caption, className) {
+    return `
+      <figure class="${className || "case-figure"}">
+        <img src="${assetPath(src)}" alt="${escapeHtml(alt)}" loading="lazy" />
+        <figcaption>${escapeHtml(caption || alt)}</figcaption>
+      </figure>
+    `;
+  }
+
+  function renderCaseStudy() {
+    const container = document.querySelector("[data-case-study]");
+    if (!container) return;
+
+    const slug = container.dataset.caseStudy;
+    const project = projects.find((item) => item.slug === slug) || projects[0];
+    if (!project) {
+      container.innerHTML = '<section class="page-section"><h1>Project not found.</h1></section>';
+      return;
+    }
+
+    const assets = project.assets || {};
+    const prototypeScreens = assets.prototypeScreens || [];
+    const gallery = project.gallery || [];
+
+    container.innerHTML = `
+      <section class="case-hero grid-shell page-hero" aria-labelledby="case-title">
+        <div class="section-rail" aria-hidden="true">
+          <span>${escapeHtml(project.category)}</span>
+          <span>${escapeHtml(project.year)}</span>
+        </div>
+        <div class="page-hero-copy">
+          <a class="back-link" href="../work.html">Back to work</a>
+          <p class="micro-label">Case study / Fintech interface / Product system</p>
+          <h1 id="case-title">${escapeHtml(project.title)}</h1>
+          <p class="lead">${escapeHtml(project.hero || project.summary)}</p>
+          <div class="work-actions">
+            <a class="text-button" href="${escapeHtml(project.prototype?.figma || project.links?.figma)}" target="_blank" rel="noreferrer">View Figma Prototype</a>
+            <a class="text-button secondary-link" href="${escapeHtml(project.prototype?.live || project.links?.live)}" target="_blank" rel="noreferrer">Open Live Vault Demo</a>
+          </div>
+        </div>
+        <div class="case-hero-media">
+          ${renderImageFigure(assets.cardFront, "Vault Bank card front", "Premium card artifact", "case-hero-card")}
+          ${renderImageFigure(assets.homeScreen, "Vault Bank home screen", "Primary mobile dashboard", "case-hero-phone")}
+        </div>
+      </section>
+
+      <section class="case-overview page-section" aria-labelledby="overview-title">
+        <div class="section-kicker">Overview</div>
+        <div class="case-overview-grid">
+          <div>
+            <h2 id="overview-title">A calmer financial product for everyday confidence.</h2>
+            <p>${escapeHtml(project.problem)}</p>
+          </div>
+          <dl class="case-facts">
+            <div><dt>Role</dt><dd>${(project.role || []).map(escapeHtml).join(" / ")}</dd></div>
+            <div><dt>Tools</dt><dd>${(project.tools || []).map(escapeHtml).join(" / ")}</dd></div>
+            <div><dt>Source note</dt><dd>Restored from the previous Vault portfolio material.</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="case-section page-section" aria-labelledby="story-title">
+        <div class="section-kicker">Product story</div>
+        <div class="case-story-list">
+          ${(project.sections || [])
+            .map(
+              (section, index) => `
+                <article>
+                  <span>${String(index + 1).padStart(2, "0")} / ${escapeHtml(section.label)}</span>
+                  <h2 ${index === 0 ? 'id="story-title"' : ""}>${escapeHtml(section.title)}</h2>
+                  <p>${escapeHtml(section.body)}</p>
+                </article>
+              `
+            )
+            .join("")}
+        </div>
+      </section>
+
+      <section class="case-section page-section" aria-labelledby="artifact-title">
+        <div class="section-kicker">Artifacts</div>
+        <div class="section-heading">
+          <h2 id="artifact-title">Screens and research evidence.</h2>
+          <p>Clean project artifacts, kept large enough for reviewers to understand the product.</p>
+        </div>
+        <div class="artifact-row primary-artifacts">
+          ${renderImageFigure(assets.personaBoard, "Sarah Mitchell persona board", "Primary persona and research board")}
+          ${renderImageFigure(assets.virtualCard, "Vault virtual card screen", "Virtual card flow")}
+        </div>
+        <div class="phone-gallery">
+          ${prototypeScreens
+            .slice(0, 6)
+            .map((src) => renderImageFigure(src, src.split("/").pop().replace(".png", ""), src.split("/").pop().replace(".png", "")))
+            .join("")}
+        </div>
+      </section>
+
+      <section class="case-section page-section" aria-labelledby="system-artifacts-title">
+        <div class="section-kicker">Visual system</div>
+        <div class="section-heading">
+          <h2 id="system-artifacts-title">Brand assets, cards, and product surfaces.</h2>
+          <p>The restored work keeps Vault's rose, plum, and gold identity visible through the actual artifacts.</p>
+        </div>
+        <div class="case-gallery">
+          ${gallery
+            .slice(0, 6)
+            .map((item) => renderImageFigure(item.src, item.alt, item.caption))
+            .join("")}
+        </div>
+      </section>
+
+      <section class="case-section page-section" aria-labelledby="process-case-title">
+        <div class="section-kicker">Process and outcomes</div>
+        <div class="case-process-grid">
+          <div>
+            <h2 id="process-case-title">Process map.</h2>
+            <ol class="case-process-list">
+              ${(project.process || [])
+                .map((item, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(item.label)}</strong><p>${escapeHtml(item.text)}</p></li>`)
+                .join("")}
+            </ol>
+          </div>
+          <div>
+            <h2>Outcomes.</h2>
+            <ul class="outcome-list">${listItems(project.outcomes || [])}</ul>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  renderFeaturedWork();
+  renderWorkList();
   renderCaseStudy();
-  bindSmoothScroll();
-  bindHeaderState();
+  bindSmoothAnchors();
+  bindActiveNav();
+  bindStudies();
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
 })();
